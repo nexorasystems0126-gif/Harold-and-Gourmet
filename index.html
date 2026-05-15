@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Harold & Gourmet — Premium Bistro Concept</title>
+  <meta name="description" content="Premium 3D interactive restaurant website concept for Harold & Gourmet Port Harcourt — menu, reservations, WhatsApp orders, catering, and Instagram discovery." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --black:#050505;
+      --charcoal:#0d0d0c;
+      --graphite:#171715;
+      --cream:#f8f1e6;
+      --cream2:#e8dccb;
+      --muted:#aa9b88;
+      --gold:#c8a15a;
+      --red:#8c1d18;
+      --olive:#4d5540;
+      --line:rgba(248,241,230,.16);
+      --glass:rgba(248,241,230,.075);
+      --shadow:0 40px 90px rgba(0,0,0,.45);
+      --radius:34px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:
+        radial-gradient(circle at 12% 4%, rgba(200,161,90,.18), transparent 28%),
+        radial-gradient(circle at 92% 14%, rgba(140,29,24,.22), transparent 31%),
+        linear-gradient(145deg,#050505 0%,#11110f 48%,#060606 100%);
+      color:var(--cream);
+      font-family:Manrope,system-ui,sans-serif;
+      overflow-x:hidden;
+    }
+    body:before{
+      content:"";position:fixed;inset:0;pointer-events:none;z-index:0;opacity:.07;
+      background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 220 220' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.9'/%3E%3C/svg%3E");
+    }
+    a{color:inherit;text-decoration:none}.page{position:relative;z-index:1}
+    .nav{
+      position:fixed;top:18px;left:50%;transform:translateX(-50%);z-index:20;
+      width:min(1180px,calc(100% - 32px));display:flex;align-items:center;justify-content:space-between;gap:16px;
+      padding:12px 12px 12px 18px;border:1px solid var(--line);border-radius:999px;
+      background:rgba(5,5,5,.68);backdrop-filter:blur(24px);box-shadow:0 20px 50px rgba(0,0,0,.35)
+    }
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;font-size:.78rem}
+    .brand-mark{width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--cream);color:var(--black);font-family:Instrument Serif,serif;font-size:1.35rem}
+    .nav-links{display:flex;align-items:center;gap:6px}.nav-links a{font-size:.78rem;font-weight:800;color:rgba(248,241,230,.74);padding:10px 13px;border-radius:999px;transition:.25s}.nav-links a:hover{background:rgba(255,255,255,.08);color:#fff}.nav-cta{background:var(--cream);color:#050505!important}
+    .hero{width:min(1180px,calc(100% - 36px));margin:0 auto;min-height:100vh;display:grid;grid-template-columns:.92fr 1.08fr;gap:38px;align-items:center;padding:128px 0 70px;perspective:1300px}
+    .eyebrow{display:inline-flex;align-items:center;gap:10px;margin-bottom:22px;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.045);color:var(--muted);font-size:.72rem;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.dot{width:8px;height:8px;border-radius:50%;background:var(--red);box-shadow:0 0 28px rgba(140,29,24,.75)}
+    h1{font-family:Instrument Serif,serif;font-weight:400;font-size:clamp(4.2rem,9vw,9.8rem);line-height:.78;letter-spacing:-.075em;margin-bottom:26px}.amp{font-style:italic;color:var(--gold)}
+    .lead{font-size:clamp(1rem,1.35vw,1.16rem);line-height:1.85;color:rgba(248,241,230,.73);max-width:610px;margin-bottom:28px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:34px}.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 20px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.055);font-weight:900;font-size:.9rem;transition:.25s}.btn:hover{transform:translateY(-3px);background:rgba(255,255,255,.1)}.btn.primary{background:var(--cream);color:#050505;border-color:transparent;box-shadow:0 18px 50px rgba(248,241,230,.14)}.btn.red{background:var(--red);border-color:rgba(255,255,255,.12);color:#fff}
+    .proof{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:630px}.proof div{padding:16px;border:1px solid var(--line);border-radius:24px;background:rgba(255,255,255,.045)}.proof b{display:block;margin-bottom:5px}.proof small{color:rgba(248,241,230,.56);line-height:1.5}
+    .visual{position:relative;min-height:660px;transform-style:preserve-3d}.photo-stack{position:absolute;inset:0;transform-style:preserve-3d;animation:float 8s ease-in-out infinite alternate}@keyframes float{from{transform:rotateY(-5deg) rotateX(2deg) translateY(0)}to{transform:rotateY(5deg) rotateX(-1deg) translateY(-16px)}}
+    .hero-photo{position:absolute;border:1px solid rgba(248,241,230,.2);box-shadow:var(--shadow);background-size:cover;background-position:center;overflow:hidden}.hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.58),transparent 55%)}
+    .p1{width:62%;height:74%;left:20%;top:5%;border-radius:44px;background-image:url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1200&q=88');transform:translateZ(80px) rotate(-2deg)}
+    .p2{width:38%;height:42%;left:0;bottom:8%;border-radius:34px;background-image:url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=88');transform:translateZ(150px) rotate(5deg)}
+    .p3{width:36%;height:36%;right:0;bottom:2%;border-radius:50%;background-image:url('https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=900&q=88');transform:translateZ(200px) rotate(-6deg)}
+    .label{position:absolute;z-index:5;left:36%;bottom:14%;max-width:280px;padding:18px;border:1px solid rgba(248,241,230,.2);border-radius:26px;background:rgba(5,5,5,.72);backdrop-filter:blur(22px);box-shadow:0 24px 50px rgba(0,0,0,.35);transform:translateZ(230px)}.label b{display:block;margin-bottom:6px}.label span{color:rgba(248,241,230,.62);font-size:.88rem;line-height:1.55}
+    section{width:min(1180px,calc(100% - 36px));margin:0 auto;padding:90px 0}.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:32px}.section-head h2{font-family:Instrument Serif,serif;font-size:clamp(2.8rem,5.4vw,6.1rem);line-height:.88;font-weight:400;letter-spacing:-.06em;max-width:760px}.section-head p{color:rgba(248,241,230,.65);line-height:1.75;max-width:390px}
+    .editorial-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:18px}.big-card{min-height:560px;border-radius:var(--radius);border:1px solid var(--line);background:linear-gradient(to top,rgba(0,0,0,.72),transparent 65%),url('https://images.unsplash.com/photo-1551218808-94e220e084d2?auto=format&fit=crop&w=1400&q=88') center/cover;box-shadow:var(--shadow);position:relative;overflow:hidden}.big-card-copy{position:absolute;left:26px;right:26px;bottom:26px;padding:24px;border:1px solid rgba(248,241,230,.18);border-radius:28px;background:rgba(5,5,5,.68);backdrop-filter:blur(18px)}.big-card h3{font-family:Instrument Serif,serif;font-size:2.8rem;font-weight:400;margin-bottom:8px}.big-card p{color:rgba(248,241,230,.68);line-height:1.7}.side-grid{display:grid;gap:18px}.side-card{min-height:174px;border:1px solid var(--line);border-radius:var(--radius);padding:24px;background:rgba(255,255,255,.05);transition:.28s}.side-card:hover{transform:translateY(-6px);background:rgba(255,255,255,.075)}.side-card span{color:var(--gold);font-weight:900;font-size:.78rem;letter-spacing:.14em}.side-card h3{margin:12px 0 8px}.side-card p{color:rgba(248,241,230,.61);line-height:1.65}
+    .menu-shell{border:1px solid var(--line);border-radius:44px;background:rgba(255,255,255,.045);box-shadow:var(--shadow);overflow:hidden}.menu-tabs{display:flex;gap:10px;flex-wrap:wrap;padding:18px;border-bottom:1px solid var(--line);background:rgba(0,0,0,.18)}.tab{border:1px solid var(--line);border-radius:999px;padding:11px 15px;background:rgba(255,255,255,.04);color:rgba(248,241,230,.7);font-weight:900;cursor:pointer}.tab.active,.tab:hover{background:var(--cream);color:#050505;border-color:transparent}.menu-body{display:grid;grid-template-columns:.86fr 1.14fr;min-height:620px}.menu-image{min-height:480px;background-size:cover;background-position:center;position:relative}.menu-image:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent)}.menu-copy{padding:34px}.menu-copy h3{font-family:Instrument Serif,serif;font-size:clamp(2.5rem,4.2vw,4.8rem);font-weight:400;letter-spacing:-.055em;line-height:.9;margin-bottom:14px}.menu-copy>p{color:rgba(248,241,230,.64);line-height:1.75;max-width:650px;margin-bottom:22px}.menu-list{display:grid;gap:12px}.menu-item{display:grid;grid-template-columns:1fr auto;gap:16px;padding:18px;border:1px solid rgba(248,241,230,.13);border-radius:24px;background:rgba(0,0,0,.18);transition:.25s}.menu-item:hover{transform:translateX(6px);background:rgba(255,255,255,.06)}.menu-item h4{margin-bottom:6px}.menu-item p{font-size:.9rem;color:rgba(248,241,230,.58);line-height:1.55}.tag{color:var(--gold);font-weight:900;white-space:nowrap;font-size:.8rem}
+    .conversion{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.conv{min-height:300px;border:1px solid var(--line);border-radius:var(--radius);padding:28px;background:linear-gradient(145deg,rgba(255,255,255,.075),rgba(255,255,255,.035));transition:.3s;transform-style:preserve-3d}.conv:hover{transform:translateY(-8px) rotateX(3deg) rotateY(-2deg)}.conv .icon{width:55px;height:55px;border-radius:18px;background:rgba(248,241,230,.1);display:grid;place-items:center;font-size:1.35rem;margin-bottom:22px}.conv h3{font-size:1.32rem;margin-bottom:12px}.conv p{color:rgba(248,241,230,.62);line-height:1.75;margin-bottom:22px}
+    .booking{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px}.form{border:1px solid var(--line);border-radius:44px;padding:28px;background:rgba(255,255,255,.055);box-shadow:var(--shadow)}.form h3{font-family:Instrument Serif,serif;font-weight:400;font-size:3.5rem;letter-spacing:-.055em;line-height:.92;margin-bottom:14px}.form p{color:rgba(248,241,230,.62);line-height:1.7;margin-bottom:22px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:12px}input,select,textarea{width:100%;border:1px solid rgba(248,241,230,.15);background:rgba(0,0,0,.22);color:var(--cream);border-radius:18px;padding:15px 16px;font:inherit;outline:none}select option{color:#050505}textarea{min-height:116px;margin-top:12px;resize:vertical}.form-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}.map{min-height:530px;border:1px solid var(--line);border-radius:44px;overflow:hidden;position:relative;box-shadow:var(--shadow);background:#111}.map iframe{width:100%;height:100%;border:0;filter:grayscale(.25) contrast(1.08)}.map-note{position:absolute;left:20px;right:20px;bottom:20px;border:1px solid rgba(248,241,230,.18);border-radius:25px;background:rgba(5,5,5,.72);backdrop-filter:blur(18px);padding:18px}.map-note span{display:block;color:rgba(248,241,230,.62);margin-top:5px;font-size:.9rem}
+    .wall{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.wall a{min-height:280px;border:1px solid var(--line);border-radius:32px;position:relative;overflow:hidden;background-size:cover;background-position:center;box-shadow:0 22px 55px rgba(0,0,0,.25);transition:.3s}.wall a:hover{transform:translateY(-8px)}.wall a:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78),transparent 58%)}.wall span{position:absolute;z-index:2;left:16px;right:16px;bottom:16px;font-weight:900;line-height:1.28}.w1{background-image:url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=900&q=88')}.w2{background-image:url('https://images.unsplash.com/photo-1565299585323-38d6b0865b47?auto=format&fit=crop&w=900&q=88')}.w3{background-image:url('https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&w=900&q=88')}.w4{background-image:url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=900&q=88')}
+    footer{width:min(1180px,calc(100% - 36px));margin:0 auto 24px;padding:28px;border:1px solid var(--line);border-radius:36px;background:rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;color:rgba(248,241,230,.64)}.whatsapp{position:fixed;right:20px;bottom:20px;z-index:30;width:64px;height:64px;border-radius:50%;display:grid;place-items:center;background:#111;border:1px solid rgba(248,241,230,.22);box-shadow:0 20px 50px rgba(0,0,0,.42);font-weight:900}.reveal{opacity:0;transform:translateY(28px);transition:.75s}.reveal.show{opacity:1;transform:none}
+    @media(max-width:980px){.nav-links a:not(.nav-cta){display:none}.hero,.editorial-grid,.menu-body,.booking{grid-template-columns:1fr}.visual{min-height:560px}.conversion{grid-template-columns:1fr}.wall{grid-template-columns:1fr 1fr}.section-head{flex-direction:column;align-items:start}.proof{grid-template-columns:1fr}}
+    @media(max-width:620px){.hero{padding-top:118px}.visual{min-height:460px}.p1{width:76%;left:12%}.p2{width:45%;height:34%;bottom:2%}.p3{display:none}.label{left:18px;right:18px;bottom:24px}.fields{grid-template-columns:1fr}.wall{grid-template-columns:1fr}.nav{width:calc(100% - 20px)}h1{font-size:4.35rem}}
+  </style>
+</head>
+<body>
+  <a class="whatsapp" href="https://wa.me/2347035711020?text=Hello%20Harold%20%26%20Gourmet%2C%20I%27d%20like%20to%20make%20an%20order%20or%20reservation." aria-label="WhatsApp Harold and Gourmet">WA</a>
+  <main class="page">
+    <nav class="nav">
+      <a class="brand" href="#top"><span class="brand-mark">H</span><span>Harold & Gourmet</span></a>
+      <div class="nav-links"><a href="#experience">Experience</a><a href="#menu">Menu</a><a href="#booking">Book</a><a href="#location">Location</a><a class="nav-cta" href="https://www.instagram.com/haroldandgourmet/" target="_blank" rel="noopener">Instagram</a></div>
+    </nav>
+
+    <header class="hero" id="top">
+      <div class="reveal">
+        <div class="eyebrow"><span class="dot"></span> Gourmet Bistro • Port Harcourt</div>
+        <h1>Harold <span class="amp">&</span><br>Gourmet</h1>
+        <p class="lead">A premium restaurant website concept designed to make Harold & Gourmet feel more desirable, more credible, and easier to buy from — with food-led visuals, menu discovery, reservations, WhatsApp ordering, catering enquiries, Instagram trust, and Google Maps.</p>
+        <div class="actions"><a class="btn primary" href="#menu">View the Menu</a><a class="btn red" href="#booking">Reserve / Order</a><a class="btn" href="https://maps.google.com/?q=45%20Evo%20Road%20GRA%20Port%20Harcourt" target="_blank" rel="noopener">Get Directions</a></div>
+        <div class="proof"><div><b>45 Evo Road</b><small>GRA Port Harcourt location visible immediately.</small></div><div><b>New Menu</b><small>Pizza, brunch, signature plates, drinks, and sweet fix routes.</small></div><div><b>Catering</b><small>Separate event enquiry path for serious leads.</small></div></div>
+      </div>
+      <div class="visual reveal" aria-label="Premium food photography layout">
+        <div class="photo-stack"><div class="hero-photo p1"></div><div class="hero-photo p2"></div><div class="hero-photo p3"></div><div class="label"><b>Real food. Real appetite.</b><span>No floating fake icons. The design uses food photography as the main persuasion tool.</span></div></div>
+      </div>
+    </header>
+
+    <section id="experience" class="reveal">
+      <div class="section-head"><h2>Make the restaurant feel expensive before they arrive.</h2><p>The old version was too brown and decorative. This version is cleaner, darker, sharper, and more food-focused — closer to a premium bistro/editorial magazine feel.</p></div>
+      <div class="editorial-grid"><div class="big-card"><div class="big-card-copy"><h3>Food photography does the selling.</h3><p>Guests do not book because of icons. They book because the food, ambience, and ordering path feel irresistible. This layout puts the appetite first.</p></div></div><div class="side-grid"><article class="side-card"><span>01</span><h3>Menu discovery</h3><p>Interactive menu categories help visitors quickly find what they want instead of scrolling endlessly.</p></article><article class="side-card"><span>02</span><h3>WhatsApp conversion</h3><p>Every important action can send the visitor straight into WhatsApp with a prepared enquiry.</p></article><article class="side-card"><span>03</span><h3>Premium trust</h3><p>Location, Instagram, catering, and food highlights are positioned like buyer decision points.</p></article></div></div>
+    </section>
+
+    <section id="menu" class="reveal">
+      <div class="section-head"><h2>A menu section people actually want to click.</h2><p>Based on public signals around Harold & Gourmet’s new menu, pizzas, brunch, sweet fix, drinks, and catering.</p></div>
+      <div class="menu-shell"><div class="menu-tabs"><button class="tab active" data-menu="signature">Signature Plates</button><button class="tab" data-menu="pizza">Pizza / New Menu</button><button class="tab" data-menu="brunch">Brunch</button><button class="tab" data-menu="sweet">Sweet Fix</button><button class="tab" data-menu="drinks">Drinks</button><button class="tab" data-menu="catering">Catering</button></div><div class="menu-body"><div class="menu-image" id="menuImage"></div><div class="menu-copy"><h3 id="menuTitle">Signature Plates</h3><p id="menuNote">A premium food-led section for the dishes that should become Harold & Gourmet’s strongest website hook.</p><div class="menu-list" id="menuList"></div></div></div></div>
+    </section>
+
+    <section class="reveal">
+      <div class="section-head"><h2>Three ways the website makes money.</h2><p>Do not pitch this as “a website”. Pitch it as a customer conversion system.</p></div>
+      <div class="conversion"><article class="conv"><div class="icon">🍽</div><h3>Reserve tables</h3><p>Capture name, phone, party size, date, time, and notes before the guest reaches WhatsApp.</p><a class="btn" href="#booking">Start booking</a></article><article class="conv"><div class="icon">🥡</div><h3>Order ahead</h3><p>Hungry visitors get a direct order route instead of guessing how to buy from Instagram.</p><a class="btn" href="https://wa.me/2347035711020?text=Hello%20Harold%20%26%20Gourmet%2C%20I%27d%20like%20to%20order." target="_blank" rel="noopener">Order on WhatsApp</a></article><article class="conv"><div class="icon">✨</div><h3>Book catering</h3><p>Bespoke catering is separated from normal food orders so high-value event leads do not get lost.</p><a class="btn" href="#booking">Request catering</a></article></div>
+    </section>
+
+    <section id="booking" class="reveal"><div class="booking"><form class="form" id="leadForm"><h3>Book, order, or plan an event.</h3><p>This form is built as a lead capture bridge. In the final site, it can connect to WhatsApp, Google Sheets, email, or a CRM.</p><div class="fields"><input required name="name" placeholder="Your name"><input required name="phone" placeholder="Phone / WhatsApp"><select name="request"><option>Table reservation</option><option>Order ahead</option><option>Birthday / group booking</option><option>Bespoke catering</option></select><select name="guests"><option>1–2 guests</option><option>3–5 guests</option><option>6–10 guests</option><option>10+ guests / event</option></select><input name="date" type="date"><input name="time" type="time"></div><textarea name="message" placeholder="Tell us what you want: menu items, date, celebration details, catering brief..."></textarea><div class="form-actions"><button class="btn primary" type="submit">Send to WhatsApp</button><a class="btn" href="https://www.instagram.com/haroldandgourmet/" target="_blank" rel="noopener">View Instagram</a></div></form><div class="map" id="location"><iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=45%20Evo%20Road%20GRA%20Port%20Harcourt&output=embed" title="Harold and Gourmet Map"></iframe><div class="map-note"><b>Harold & Gourmet</b><span>45 Evo Road, GRA, Port Harcourt.</span></div></div></div></section>
+
+    <section class="reveal"><div class="section-head"><h2>Social proof without looking cheap.</h2><p>The Instagram link is present, but the site does not depend on Instagram alone. It converts visitors directly.</p></div><div class="wall"><a class="w1" href="https://www.instagram.com/haroldandgourmet/" target="_blank"><span>Signature plates for appetite-first selling</span></a><a class="w2" href="https://www.instagram.com/haroldandgourmet/" target="_blank"><span>New menu and pizza discovery</span></a><a class="w3" href="https://www.instagram.com/chefharoldscreamery/" target="_blank"><span>Sweet Fix and creamery angle</span></a><a class="w4" href="https://wa.me/2347035711020" target="_blank"><span>WhatsApp booking and order path</span></a></div></section>
+
+    <footer><div><b>Harold & Gourmet</b><br><span>Premium bistro concept — Port Harcourt</span></div><div class="actions" style="margin:0"><a class="btn" href="https://www.instagram.com/haroldandgourmet/" target="_blank">Instagram</a><a class="btn primary" href="https://wa.me/2347035711020" target="_blank">WhatsApp</a></div></footer>
+  </main>
+
+  <script>
+    const menuData={
+      signature:{title:'Signature Plates',note:'A premium food-led section for the dishes that should become Harold & Gourmet’s strongest website hook.',image:'https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=88',items:[['Peppered Turkey x Coconut Fried Rice','Use this as a hero dish because it sounds specific, Nigerian, and memorable.','Featured'],['Gourmet Bistro Plates','For chef-led local and continental meals with a premium plating style.','Bistro'],['Chef Specials','A flexible slot for rotating bestsellers and seasonal dishes.','Rotating']]},
+      pizza:{title:'Pizza / New Menu',note:'The new menu should have its own visual moment. It gives the restaurant a fresh marketing angle.',image:'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=1200&q=88',items:[['Gourmet Pizza','Position the pizza launch as a reason to revisit the restaurant.','New'],['Shareable Table Bites','Built for groups, date nights, and casual evenings.','Share'],['New Menu Highlights','A rotating block that can change as new dishes drop.','Fresh']]},
+      brunch:{title:'Brunch',note:'A softer, social section for weekend visitors, families, friend groups, and dates.',image:'https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?auto=format&fit=crop&w=1200&q=88',items:[['Weekend Brunch Plates','The section for slow mornings, family visits, and group bookings.','Brunch'],['Gourmet Breakfast-Lunch','Simple positioning visitors understand immediately.','Social'],['Group Brunch Table','Pushes party size and table reservations.','Booking']]},
+      sweet:{title:'Sweet Fix',note:'Dessert should not be hidden. It is a powerful content and foot-traffic hook.',image:'https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=1200&q=88',items:[['Sunday Sweet Fix','A weekly reason for customers to visit even when they are not planning a full meal.','Sunday'],['Chef Harold’s Creamery','Dessert/creamery angle connected to the bistro experience.','Creamery'],['Dessert Pairings','A clean upsell after meals and a strong Instagram content driver.','Upsell']]},
+      drinks:{title:'Drinks',note:'Drinks help turn food visits into social experiences and bigger average orders.',image:'https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&w=1200&q=88',items:[['Classic Daiquiri','Named drinks make the menu more memorable and easier to promote.','Drink'],['Fresh Coolers','Perfect for hot Port Harcourt afternoons and brunch traffic.','Cool'],['Pairing Suggestions','Helps guests order more confidently.','Pair']]},
+      catering:{title:'Bespoke Catering',note:'Catering needs its own path because it is a higher-value enquiry than normal dine-in traffic.',image:'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=1200&q=88',items:[['Private Event Catering','For birthdays, intimate dinners, corporate lunches, and family events.','Events'],['Custom Menu Brief','Capture date, guest count, budget range, and food preferences.','Custom'],['Chef-led Hospitality','Positions Harold & Gourmet as more than a restaurant.','Premium']]}
+    };
+    const tabs=document.querySelectorAll('.tab'),title=document.getElementById('menuTitle'),note=document.getElementById('menuNote'),list=document.getElementById('menuList'),img=document.getElementById('menuImage');
+    function render(k){const d=menuData[k];title.textContent=d.title;note.textContent=d.note;img.style.backgroundImage=`linear-gradient(to top,rgba(0,0,0,.55),transparent),url('${d.image}')`;list.innerHTML=d.items.map(i=>`<article class="menu-item"><div><h4>${i[0]}</h4><p>${i[1]}</p></div><span class="tag">${i[2]}</span></article>`).join('')}
+    tabs.forEach(t=>t.onclick=()=>{tabs.forEach(x=>x.classList.remove('active'));t.classList.add('active');render(t.dataset.menu)});render('signature');
+    const obs=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+    document.getElementById('leadForm').addEventListener('submit',e=>{e.preventDefault();const f=new FormData(e.target);const m=`Hello Harold & Gourmet,%0A%0AI would like to make a request.%0A%0AName: ${encodeURIComponent(f.get('name'))}%0APhone: ${encodeURIComponent(f.get('phone'))}%0ARequest: ${encodeURIComponent(f.get('request'))}%0AGuests: ${encodeURIComponent(f.get('guests'))}%0ADate: ${encodeURIComponent(f.get('date')||'Not specified')}%0ATime: ${encodeURIComponent(f.get('time')||'Not specified')}%0ANotes: ${encodeURIComponent(f.get('message')||'No extra notes')}`;window.open(`https://wa.me/2347035711020?text=${m}`,'_blank')});
+  </script>
+</body>
+</html>
